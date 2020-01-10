@@ -1,7 +1,11 @@
 import React from "react";
 
 const OtherContacts = () => {
-  return <div></div>;
+  return (
+    <div>
+      <h1>other contacts</h1>
+    </div>
+  );
 };
 
 export default OtherContacts;

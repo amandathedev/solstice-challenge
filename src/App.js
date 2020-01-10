@@ -22,7 +22,9 @@ class App extends Component {
   }
 
   fetchContacts = () => {
-    fetch("https://s3.amazonaws.com/technical-challenge/v3/contacts.json")
+    fetch("https://s3.amazonaws.com/technical-challenge/v3/contacts.json", {
+      mode: "no-cors"
+    })
       .then(resp => resp.json())
       .then(contacts => {
         this.setState({
@@ -35,6 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h1>App</h1>
         <ContactList contacts={this.state.contacts} />
       </div>
     );
