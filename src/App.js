@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
+import ContactList from "./components/ContactList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      contacts: []
+    };
+  }
+
+  componentDidMount() {
+    this.fetchContacts();
+  }
+
+  fetchContacts = () => {
+    fetch("https://s3.amazonaws.com/technical-challenge/v3/contacts.json")
+      .then(resp => resp.json())
+      .then(contacts => {
+        this.setState({
+          contacts
+        });
+      })
+      .catch(alert);
+  };
+
+  render() {
+    return (
+      <div>
+        <ContactList contacts={this.state.contacts} />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);
