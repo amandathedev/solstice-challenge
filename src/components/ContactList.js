@@ -13,8 +13,11 @@ export default class ContactList extends Component {
   render() {
     return (
       <div className="contact-list">
-        <h1>contact list</h1>
-        <FavoriteContacts />
+        <nav className="navbar navbar-light bg-light">
+          <span className="navbar-brand mb-0 h1">Contacts</span>
+        </nav>
+
+        <FavoriteContacts contacts={this.props.contacts} />
         <OtherContacts />
       </div>
     );

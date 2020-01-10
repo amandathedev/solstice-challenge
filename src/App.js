@@ -37,7 +37,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>App</h1>
+        {this.state.contacts.map(contact => {
+          return <p>{contact.name}</p>;
+        })}
         <ContactList contacts={this.state.contacts} />
       </div>
     );
