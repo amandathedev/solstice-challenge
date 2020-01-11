@@ -3,18 +3,24 @@ import ContactItem from "./ContactItem";
 import ContactDetails from "./ContactDetails";
 
 export default class FavoriteContacts extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
-  findFavorites = props => {
+  findFavorites = () => {
+    // console.log(this.props);
     return this.props.contacts.map(contact => {
       if (contact.isFavorite === true) {
+        console.log(contact.id);
         return (
           <div>
             <ContactItem
               contact={contact}
-              changeDisplay={() => this.props.changeDisplay()}
+              key={contact.id}
+              // changeDisplay={() => this.props.changeDisplay()}
+              handleContactClick={event =>
+                this.props.handleContactClick(event, contact)
+              }
             />
           </div>
         );

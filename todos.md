@@ -22,12 +22,18 @@
 
 <!-- # import { BrowserRouter as Router, Route, Link } from "react-router-dom" in top of app.js -->
 
-# Individual CSS pages or component styling
+# Toggle contact details/contact list on click
 
-# Routing
+# Add button to toggle favorite status
+
+# Build contact details component
+
+# Handle missing photos
 
 # Favicon browser icon
 
-# Comment code
+# Accessibility
+
+# Comments
 
 # ReadME

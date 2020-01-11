@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import "../styles/ContactItem.css";
 
 export default class ContactItem extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
+    // console.log(this.props);
     return (
       <div
         className="item-div"
-        onClick={() => this.props.changeDisplay(this.props.contact)}
+        onClick={() => this.props.handleContactClick(this.props.contact)}
       >
         <img
           className="item-image"
