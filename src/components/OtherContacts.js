@@ -1,11 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
+import ContactItem from "./ContactItem";
 
-const OtherContacts = () => {
-  return (
-    <div>
-      <h1>other contacts</h1>
-    </div>
-  );
-};
+export default class OtherContacts extends Component {
+  constructor() {
+    super();
+  }
 
-export default OtherContacts;
+  findOthers = () => {
+    return this.props.contacts.map(contact => {
+      if (contact.isFavorite === false) {
+        return <ContactItem contact={contact} />;
+      }
+    });
+  };
+
+  render() {
+    return <div>{this.findOthers()}</div>;
+  }
+}

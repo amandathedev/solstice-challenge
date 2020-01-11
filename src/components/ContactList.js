@@ -20,7 +20,8 @@ export default class ContactList extends Component {
         <nav className="navbar second-header">Favorite Contacts</nav>
 
         <FavoriteContacts contacts={this.props.contacts} />
-        <OtherContacts />
+        <nav className="navbar second-header">Other Contacts</nav>
+        <OtherContacts contacts={this.props.contacts} />
       </div>
     );
   }

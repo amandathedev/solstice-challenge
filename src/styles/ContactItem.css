@@ -1,10 +1,30 @@
 .item-div {
   display: flex;
-  /* margin-bottom: em; */
   padding: 1em;
+  font-family: "Montserrat", sans-serif;
 }
 
 .item-image {
   width: 25%;
   margin-right: 1em;
+}
+
+.text-div {
+  flex-direction: column;
+}
+
+.item-header {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.item-text {
+  letter-spacing: 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-left: 1.7em;
+}
+
+.emoji-span {
+  margin-right: 0.3em;
 }

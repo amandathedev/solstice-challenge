@@ -10,8 +10,14 @@ export default class ContactItem extends Component {
           className="item-image"
           src={this.props.contact.smallImageURL}
         ></img>
-        <h4>{this.props.contact.name}</h4>
-        <p>{this.props.contact.companyName}</p>
+        <div className="text-div">
+          <h4 className="item-header">
+            <span className="emoji-span">&#11088;</span>
+            {this.props.contact.name}
+          </h4>
+          <p className="item-text">{this.props.contact.companyName}</p>
+        </div>
+        <hr></hr>
         <hr></hr>
       </div>
     );
