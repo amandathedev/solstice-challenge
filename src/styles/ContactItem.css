@@ -1,0 +1,10 @@
+.item-div {
+  display: flex;
+  /* margin-bottom: em; */
+  padding: 1em;
+}
+
+.item-image {
+  width: 25%;
+  margin-right: 1em;
+}

@@ -1,9 +1,21 @@
 import React, { Component } from "react";
+import ContactItem from "./ContactItem";
 
 export default class FavoriteContacts extends Component {
-  render() {
+  constructor() {
+    super();
+  }
+
+  findFavorites = () => {
     return this.props.contacts.map(contact => {
-      return <p>{contact.name}</p>;
+      if (contact.isFavorite === true) {
+        // console.log(contact);
+        return <ContactItem contact={contact} />;
+      }
     });
+  };
+
+  render() {
+    return <div>{this.findFavorites()}</div>;
   }
 }

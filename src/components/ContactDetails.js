@@ -1,11 +1,9 @@
 import React, { Component } from "react";
+import "../styles/ContactDetails.css";
 
 export default class ContactDetails extends Component {
   render() {
-    return (
-      <div>
-        <h1>contact details</h1>
-      </div>
-    );
+    console.log(this.props.contact.name);
+    return <div className="details-div"></div>;
   }
 }

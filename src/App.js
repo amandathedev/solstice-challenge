@@ -22,9 +22,7 @@ class App extends Component {
   }
 
   fetchContacts = () => {
-    fetch("https://s3.amazonaws.com/technical-challenge/v3/contacts.json", {
-      mode: "no-cors"
-    })
+    fetch("https://s3.amazonaws.com/technical-challenge/v3/contacts.json")
       .then(resp => resp.json())
       .then(contacts => {
         this.setState({
@@ -35,11 +33,12 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div>
-        {this.state.contacts.map(contact => {
+        {/* {this.state.contacts.map(contact => {
           return <p>{contact.name}</p>;
-        })}
+        })} */}
         <ContactList contacts={this.state.contacts} />
       </div>
     );
