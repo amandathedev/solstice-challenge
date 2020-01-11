@@ -7,13 +7,16 @@ import {
   withRouter
 } from "react-router-dom";
 import ContactList from "./components/ContactList";
+import ContactDetails from "./components/ContactDetails";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      contacts: []
+      contacts: [],
+      displayContact: true,
+      activeContact: ""
     };
   }
 
@@ -32,14 +35,24 @@ class App extends Component {
       .catch(alert);
   };
 
+  changeDisplay = () => {
+    this.setState(prevState => ({
+      displayContact: !prevState.displayContact
+    }));
+  };
+
   render() {
-    console.log(this.state);
     return (
       <div>
-        {/* {this.state.contacts.map(contact => {
-          return <p>{contact.name}</p>;
-        })} */}
-        <ContactList contacts={this.state.contacts} />
+        {this.state.displayContact ? (
+          <ContactList
+            contacts={this.state.contacts}
+            displayContact={this.state.displayContact}
+            changeDisplay={this.changeDisplay}
+          />
+        ) : (
+          <ContactDetails contacts={this.state.contacts} />
+        )}
       </div>
     );
   }

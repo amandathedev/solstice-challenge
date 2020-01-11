@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import ContactItem from "./ContactItem";
+import ContactDetails from "./ContactDetails";
 
 export default class FavoriteContacts extends Component {
   constructor() {
     super();
   }
 
+  viewDetails = () => {};
+
   findFavorites = () => {
     return this.props.contacts.map(contact => {
       if (contact.isFavorite === true) {
-        // console.log(contact);
-        return <ContactItem contact={contact} />;
+        return <ContactItem contact={contact} onClick={this.viewDetails()} />;
       }
     });
   };
