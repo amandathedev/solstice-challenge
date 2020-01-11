@@ -7,12 +7,17 @@ export default class FavoriteContacts extends Component {
     super();
   }
 
-  viewDetails = () => {};
-
-  findFavorites = () => {
+  findFavorites = props => {
     return this.props.contacts.map(contact => {
       if (contact.isFavorite === true) {
-        return <ContactItem contact={contact} onClick={this.viewDetails()} />;
+        return (
+          <div>
+            <ContactItem
+              contact={contact}
+              changeDisplay={() => this.props.changeDisplay()}
+            />
+          </div>
+        );
       }
     });
   };

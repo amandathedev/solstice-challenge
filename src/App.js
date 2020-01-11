@@ -35,9 +35,10 @@ class App extends Component {
       .catch(alert);
   };
 
-  changeDisplay = () => {
+  changeDisplay = contact => {
     this.setState(prevState => ({
-      displayContact: !prevState.displayContact
+      displayContact: !prevState.displayContact,
+      activeContact: contact
     }));
   };
 
@@ -48,10 +49,14 @@ class App extends Component {
           <ContactList
             contacts={this.state.contacts}
             displayContact={this.state.displayContact}
-            changeDisplay={this.changeDisplay}
+            changeDisplay={() => this.changeDisplay()}
+            activeContact={this.state.activeContact}
           />
         ) : (
-          <ContactDetails contacts={this.state.contacts} />
+          <ContactDetails
+            contacts={this.state.contacts}
+            activeContact={this.state.activeContact}
+          />
         )}
       </div>
     );

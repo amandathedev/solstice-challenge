@@ -11,9 +11,13 @@ import {
 import "../styles/ContactList.css";
 
 export default class ContactList extends Component {
+  constructor() {
+    super();
+  }
+
   render() {
     return (
-      <div className="contact-list" onClick={this.props.changeDisplay}>
+      <div className="contact-list" onClick={() => this.props.changeDisplay()}>
         <nav className="navbar contact-header">
           <span className="first-header">Contacts</span>
         </nav>
@@ -21,13 +25,13 @@ export default class ContactList extends Component {
         <nav className="navbar second-header">Favorite Contacts</nav>
         <FavoriteContacts
           contacts={this.props.contacts}
-          onClick={this.props.changeDisplay}
+          changeDisplay={() => this.props.changeDisplay()}
         />
 
         <nav className="navbar second-header">Other Contacts</nav>
         <OtherContacts
           contacts={this.props.contacts}
-          onClick={this.props.changeDisplay}
+          changeDisplay={() => this.props.changeDisplay()}
         />
       </div>
     );
