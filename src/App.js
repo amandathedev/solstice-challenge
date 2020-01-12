@@ -22,7 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchContacts();
-    this.sortContacts();
+    // this.sortContacts();
   }
 
   fetchContacts = () => {
@@ -35,7 +35,7 @@ class App extends Component {
           contacts
         });
       })
-      // .then(this.sortContacts())
+      .then(() => this.sortContacts())
       .catch(alert);
   };
 
@@ -43,9 +43,9 @@ class App extends Component {
     let sortedContacts = this.state.contacts.sort(function(a, b) {
       let nameA = a.name.toLowerCase(),
         nameB = b.name.toLowerCase();
-      if (nameA > nameB) {
+      if (nameA < nameB) {
         return -1;
-      } else if (nameA < nameB) {
+      } else if (nameA > nameB) {
         return 1;
       } else {
         return 0;
