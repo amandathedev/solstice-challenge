@@ -14,6 +14,7 @@ export default class OtherContacts extends Component {
             contact={contact}
             // changeDisplay={() => this.props.changeDisplay()}
             handleContactClick={this.props.handleContactClick}
+            toggleFavorite={this.props.toggleFavorite}
           />
         );
       }

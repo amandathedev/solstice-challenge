@@ -10,13 +10,14 @@ export default class FavoriteContacts extends Component {
   findFavorites = () => {
     return this.props.contacts.map(contact => {
       if (contact.isFavorite === true) {
-        console.log(contact.id);
+        // console.log(contact.id);
         return (
           <div>
             <ContactItem
               contact={contact}
               key={contact.id}
               handleContactClick={this.props.handleContactClick}
+              toggleFavorite={this.props.toggleFavorite}
             />
           </div>
         );

@@ -26,12 +26,14 @@ export default class ContactList extends Component {
         <FavoriteContacts
           contacts={this.props.contacts}
           handleContactClick={this.props.handleContactClick}
+          toggleFavorite={this.props.toggleFavorite}
         />
 
         <nav className="navbar second-header">Other Contacts</nav>
         <OtherContacts
           contacts={this.props.contacts}
           handleContactClick={this.props.handleContactClick}
+          toggleFavorite={this.props.toggleFavorite}
         />
       </div>
     );

@@ -38,21 +38,23 @@ class App extends Component {
       .catch(alert);
   };
 
-  // changeDisplay = (event, contact) => {
-  //   console.log("got here", contact, event);
-  //   this.setState(prevState => ({
-  //     displayContact: !prevState.displayContact
-  //     // activeContact: contact
-  //   }));
-  // };
-
   handleContactClick = contact => {
-    console.log("got here");
     let openContact = this.state.activeContact.name === contact.name;
 
     this.setState({
       // displayContact: openContact ? false : true,
       activeContact: openContact ? {} : contact
+    });
+  };
+
+  toggleFavorite = selectedContact => {
+    const updatedContact = [...this.state.contacts].map(contact =>
+      contact.id === selectedContact.id
+        ? Object.assign(contact, { isFavorite: !contact.isFavorite })
+        : contact
+    );
+    this.setState({
+      contact: updatedContact
     });
   };
 
@@ -64,6 +66,7 @@ class App extends Component {
             contacts={this.state.contacts}
             activeContact={this.state.activeContact}
             handleContactClick={this.handleContactClick}
+            toggleFavorite={this.toggleFavorite}
           />
         ) : (
           <ContactList
@@ -71,6 +74,7 @@ class App extends Component {
             displayContact={this.state.displayContact}
             activeContact={this.state.activeContact}
             handleContactClick={this.handleContactClick}
+            toggleFavorite={this.toggleFavorite}
           />
         )}
       </div>

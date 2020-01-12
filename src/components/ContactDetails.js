@@ -64,7 +64,9 @@ export default class ContactDetails extends Component {
           >
             <i className="fas fa-chevron-left"></i> Contacts
           </span>
-          <span>
+          <span
+            onClick={() => this.props.toggleFavorite(this.props.activeContact)}
+          >
             {isFavorite ? (
               <i className="fas fa-star favorite-star"></i>
             ) : (
