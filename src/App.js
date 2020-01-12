@@ -27,8 +27,7 @@ class App extends Component {
 
   fetchContacts = () => {
     // fetch("https://s3.amazonaws.com/technical-challenge/v3/contacts.json")
-
-    // !! Sets up mock API using the given data. The provided link repeatedly hits a CORS error
+    // !! Sets up mock API using the given JSON data. The provided link not functioning properly
     fetch("https://api.myjson.com/bins/e32o6")
       .then(resp => resp.json())
       .then(contacts => {
@@ -36,6 +35,7 @@ class App extends Component {
           contacts
         });
       })
+      // .then(this.sortContacts())
       .catch(alert);
   };
 
@@ -43,9 +43,9 @@ class App extends Component {
     let sortedContacts = this.state.contacts.sort(function(a, b) {
       let nameA = a.name.toLowerCase(),
         nameB = b.name.toLowerCase();
-      if (nameA < nameB) {
+      if (nameA > nameB) {
         return -1;
-      } else if (nameA > nameB) {
+      } else if (nameA < nameB) {
         return 1;
       } else {
         return 0;

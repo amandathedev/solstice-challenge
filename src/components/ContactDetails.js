@@ -79,6 +79,7 @@ export default class ContactDetails extends Component {
             className="details-img"
             src={largeImageURL}
             onError={this.addDefault}
+            alt="contact image"
           ></img>
           <h3 className="details-name">{name}</h3>
           <p className="details-company">{companyName}</p>

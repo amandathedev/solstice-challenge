@@ -20,6 +20,7 @@ export default class ContactItem extends Component {
           className="item-image"
           src={this.props.contact.smallImageURL}
           onError={this.addDefault}
+          alt="contact image"
         ></img>
         <div className="text-div">
           <h4 className="item-header">
