@@ -1,9 +1,9 @@
 .contact-header {
   background-color: #f7f7f7;
-}
-
-.top-header {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1em;
 }
 
 .second-header {
@@ -11,4 +11,17 @@
   font-size: 0.6em;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+  .contact-header {
+    font-size: 1.8em;
+  }
+
+  .second-header {
+    font-size: 0.9em;
+  }
 }

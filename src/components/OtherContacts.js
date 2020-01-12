@@ -10,12 +10,15 @@ export default class OtherContacts extends Component {
     return this.props.contacts.map(contact => {
       if (contact.isFavorite === false) {
         return (
-          <ContactItem
-            contact={contact}
-            // changeDisplay={() => this.props.changeDisplay()}
-            handleContactClick={this.props.handleContactClick}
-            toggleFavorite={this.props.toggleFavorite}
-          />
+          <div>
+            <ContactItem
+              contact={contact}
+              // changeDisplay={() => this.props.changeDisplay()}
+              handleContactClick={this.props.handleContactClick}
+              toggleFavorite={this.props.toggleFavorite}
+            />
+            <hr></hr>
+          </div>
         );
       }
     });

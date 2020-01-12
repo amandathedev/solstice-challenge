@@ -18,9 +18,7 @@ export default class ContactList extends Component {
   render() {
     return (
       <div className="contact-list">
-        <nav className="navbar contact-header">
-          <span className="top-header">Contacts</span>
-        </nav>
+        <nav className="navbar contact-header text-center">Contacts</nav>
 
         <nav className="navbar second-header">Favorite Contacts</nav>
         <FavoriteContacts

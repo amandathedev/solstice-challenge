@@ -19,6 +19,7 @@ export default class FavoriteContacts extends Component {
               handleContactClick={this.props.handleContactClick}
               toggleFavorite={this.props.toggleFavorite}
             />
+            <hr></hr>
           </div>
         );
       }

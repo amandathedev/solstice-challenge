@@ -22,12 +22,13 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchContacts();
+    this.sortContacts();
   }
 
   fetchContacts = () => {
     // fetch("https://s3.amazonaws.com/technical-challenge/v3/contacts.json")
 
-    // Sets up mock API using the given data. The provided link repeatedly hits a CORS error
+    // !! Sets up mock API using the given data. The provided link repeatedly hits a CORS error
     fetch("https://api.myjson.com/bins/e32o6")
       .then(resp => resp.json())
       .then(contacts => {
@@ -36,6 +37,24 @@ class App extends Component {
         });
       })
       .catch(alert);
+  };
+
+  sortContacts = () => {
+    let sortedContacts = this.state.contacts.sort(function(a, b) {
+      let nameA = a.name.toLowerCase(),
+        nameB = b.name.toLowerCase();
+      if (nameA < nameB) {
+        return -1;
+      } else if (nameA > nameB) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+
+    this.setState({
+      contacts: sortedContacts
+    });
   };
 
   handleContactClick = contact => {

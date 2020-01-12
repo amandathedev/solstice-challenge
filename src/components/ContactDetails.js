@@ -62,7 +62,7 @@ export default class ContactDetails extends Component {
             className="first-header"
             onClick={this.props.handleContactClick}
           >
-            <i className="fas fa-chevron-left"></i> Contacts
+            <i className="fas fa-chevron-left left-arrow"></i> Contacts
           </span>
           <span
             onClick={() => this.props.toggleFavorite(this.props.activeContact)}

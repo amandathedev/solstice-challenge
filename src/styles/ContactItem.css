@@ -32,3 +32,28 @@
 .other-span {
   margin-left: 1.4em;
 }
+
+@media only screen and (min-width: 992px) {
+  .item-image {
+    width: 15%;
+    margin-left: 3vw;
+  }
+
+  .item-header {
+    font-size: 2rem;
+  }
+
+  .item-text {
+    font-size: 1.2rem;
+    margin-left: 2.3em;
+  }
+
+  .emoji-span {
+    margin-right: 0.3em;
+    font-size: 2rem;
+  }
+
+  .other-span {
+    margin-left: 1.4em;
+  }
+}
