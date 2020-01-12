@@ -6,8 +6,11 @@ export default class ContactItem extends Component {
     super(props);
   }
 
+  addDefault = event => {
+    event.target.src = "https://i.imgur.com/rnWD7QP.png";
+  };
+
   render() {
-    // console.log(this.props);
     return (
       <div
         className="item-div"
@@ -16,6 +19,7 @@ export default class ContactItem extends Component {
         <img
           className="item-image"
           src={this.props.contact.smallImageURL}
+          onError={this.addDefault}
         ></img>
         <div className="text-div">
           <h4 className="item-header">

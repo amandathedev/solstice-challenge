@@ -17,26 +17,23 @@ export default class ContactList extends Component {
 
   render() {
     return (
-      <div
-        className="contact-list"
-        // onClick={() => this.props.changeDisplay()}
-      >
+      <div className="contact-list">
         <nav className="navbar contact-header">
-          <span className="first-header">Contacts</span>
+          <span className="top-header">Contacts</span>
         </nav>
 
         <nav className="navbar second-header">Favorite Contacts</nav>
         <FavoriteContacts
           contacts={this.props.contacts}
-          // changeDisplay={() => this.props.changeDisplay()}
-          handleContactClick={event => this.props.handleContactClick(event)}
+          // handleContactClick={event => this.props.handleContactClick(event)}
+          handleContactClick={this.props.handleContactClick}
         />
 
         <nav className="navbar second-header">Other Contacts</nav>
         <OtherContacts
           contacts={this.props.contacts}
-          // changeDisplay={() => this.props.changeDisplay()}
-          handleContactClick={event => this.props.handleContactClick(event)}
+          // handleContactClick={event => this.props.handleContactClick(event)}
+          handleContactClick={this.props.handleContactClick}
         />
       </div>
     );

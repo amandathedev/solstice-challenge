@@ -17,10 +17,7 @@ export default class FavoriteContacts extends Component {
             <ContactItem
               contact={contact}
               key={contact.id}
-              // changeDisplay={() => this.props.changeDisplay()}
-              handleContactClick={event =>
-                this.props.handleContactClick(event, contact)
-              }
+              handleContactClick={this.props.handleContactClick}
             />
           </div>
         );

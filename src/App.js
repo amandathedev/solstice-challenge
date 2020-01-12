@@ -47,6 +47,7 @@ class App extends Component {
   // };
 
   handleContactClick = contact => {
+    console.log("got here");
     let openContact = this.state.activeContact.name === contact.name;
 
     this.setState({

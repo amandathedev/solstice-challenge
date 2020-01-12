@@ -3,9 +3,9 @@
 }
 
 .details-img {
-  width: 40%;
-  margin-left: 30%;
-  margin-top: 10%;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
 }
 
 .details-name {
@@ -14,8 +14,17 @@
   margin-top: 5%;
 }
 
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .details-company {
   text-align: center;
+  color: #949494;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 .details-header {
@@ -26,9 +35,39 @@
 }
 
 .details-spec {
+  color: #a8a8a8;
 }
 
-.home-phone-div {
+.first-header {
+  color: #428eca;
+  padding-top: 0.4em;
+}
+
+.split-div {
   display: flex;
-  align-content: space-between;
+  justify-content: space-between;
+}
+
+.favorite-star {
+  color: #f5b316;
+}
+
+.other-star {
+  color: #4b4a4a;
+}
+
+.contact-header {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.detail-info {
+  font-weight: 600;
+}
+
+hr {
+  margin-top: 5px;
+}
+
+.detail-header {
+  border-bottom: 1px solid #e2e2e2;
 }

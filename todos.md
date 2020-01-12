@@ -26,9 +26,9 @@
 
 # Add button to toggle favorite status
 
-# Build contact details component
+<!-- # Build contact details component -->
 
-# Handle missing photos
+<!-- # Handle missing photos -->
 
 # Favicon browser icon
 

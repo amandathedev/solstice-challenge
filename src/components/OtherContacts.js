@@ -13,6 +13,7 @@ export default class OtherContacts extends Component {
           <ContactItem
             contact={contact}
             // changeDisplay={() => this.props.changeDisplay()}
+            handleContactClick={this.props.handleContactClick}
           />
         );
       }
