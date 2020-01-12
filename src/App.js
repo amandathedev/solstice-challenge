@@ -63,12 +63,12 @@ class App extends Component {
           <ContactDetails
             contacts={this.state.contacts}
             activeContact={this.state.activeContact}
+            handleContactClick={this.handleContactClick}
           />
         ) : (
           <ContactList
             contacts={this.state.contacts}
             displayContact={this.state.displayContact}
-            // changeDisplay={() => this.changeDisplay()}
             activeContact={this.state.activeContact}
             handleContactClick={this.handleContactClick}
           />

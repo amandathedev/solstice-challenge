@@ -8,7 +8,6 @@ export default class FavoriteContacts extends Component {
   }
 
   findFavorites = () => {
-    // console.log(this.props);
     return this.props.contacts.map(contact => {
       if (contact.isFavorite === true) {
         console.log(contact.id);
