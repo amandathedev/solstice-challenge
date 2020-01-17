@@ -39,6 +39,7 @@ class App extends Component {
       .catch(alert);
   };
 
+  // Sort contacts alphabetically
   sortContacts = () => {
     let sortedContacts = this.state.contacts.sort(function(a, b) {
       let nameA = a.name.toLowerCase(),
@@ -67,11 +68,17 @@ class App extends Component {
   };
 
   toggleFavorite = selectedContact => {
+    // Map over the contacts array in state. Use spread to preserve original array
     const updatedContact = [...this.state.contacts].map(contact =>
+      // Find the contact whose id is the same as the contact passed in to this function
       contact.id === selectedContact.id
-        ? Object.assign(contact, { isFavorite: !contact.isFavorite })
-        : contact
+        ? // Create an object with the existing data and the new data for isFavorite, which is toggled
+          Object.assign(contact, { isFavorite: !contact.isFavorite })
+        : // If the current contact's ID does not match, return that contact (leave it alone)
+          contact
     );
+
+    // Update the contact in state
     this.setState({
       contact: updatedContact
     });
@@ -80,15 +87,20 @@ class App extends Component {
   render() {
     return (
       <div>
+        {/* If there is an activeContact in state (if not, it won't have a name) */}
         {this.state.activeContact.name ? (
+          // Display the ContactDetails component
           <ContactDetails
+            // And pass in the necessary props
             contacts={this.state.contacts}
             activeContact={this.state.activeContact}
             handleContactClick={this.handleContactClick}
             toggleFavorite={this.toggleFavorite}
           />
         ) : (
+          // Otherwise display the ContactList component
           <ContactList
+            // And pass in the necessary props
             contacts={this.state.contacts}
             displayContact={this.state.displayContact}
             activeContact={this.state.activeContact}
