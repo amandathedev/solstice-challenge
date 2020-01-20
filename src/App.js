@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// Ended up not using
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +16,7 @@ class App extends Component {
 
     this.state = {
       contacts: [],
+      // Removed because unnecessary -- can just check for the existence of an activeContact
       // displayContact: false,
       activeContact: {}
     };
@@ -36,6 +38,7 @@ class App extends Component {
         });
       })
       .then(() => this.sortContacts())
+      // Error handling
       .catch(alert);
   };
 
